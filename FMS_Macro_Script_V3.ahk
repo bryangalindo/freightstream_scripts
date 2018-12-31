@@ -46,7 +46,7 @@ if (UserSubmittedAgent && UserSubmittedCarrier) {
 } else if (UserSubmittedAgent && !UserSubmittedCarrier) {
 	AGENTREF := AgentsFuncArray[UserSubmittedAgent].AGENTREF
 	MBL := ""
-} else if (!UserSubmittedAgent && UserSubmittedCarrier){
+} else if (!UserSubmittedAgent && UserSubmittedCarrier) {
 	AGENTREF := ""
 	MBL := CarrierArray[UserSubmittedCarrier]
 } else {
@@ -61,7 +61,7 @@ SENDEVENT, {F2}
 SENDEVENT, {TAB 2}
 SEND  %AGENTREF%
 SENDEVENT, {TAB}
-IF (UserSubmittedAgent != ""ù){
+IF (UserSubmittedAgent != ""){
 	SEND %FMSAGENT%
 	SENDEVENT, {ENTER 2}
 }
@@ -79,7 +79,7 @@ IF (Containers = 1){
 	SENDEVENT, ^{C}
 }
 SENDEVENT, {TAB 13}
-IF (LOADPORT != ""ù) {
+IF (LOADPORT != "") {
 	SEND %LOADPORT%
 	SENDEVENT, {ENTER 2}
 }
@@ -135,7 +135,7 @@ SENDEVENT, {ENTER 2}
 SENDEVENT, {F6}
 SENDEVENT, {F2}
 SENDEVENT, {TAB}
-IF (AMS = 1ù) {
+IF (AMS = 1) {
 	SEND, PPILQD
 } ELSE IF (AMS = 0) {
 	SEND, %UserSubmittedAGENTREF%
@@ -154,7 +154,7 @@ IF (DOOR = 1){
 
 KEYWAIT, TAB,D
 
-IF (AMS = 1ù) {
+IF (AMS = 1) {
 	SENDEVENT, ^{V}
 	SENDEVENT, +{TAB}
 	SENDEVENT, ^{C}
